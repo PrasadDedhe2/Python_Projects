@@ -1,0 +1,40 @@
+def mySplitfunction(sentence):
+    list = [] #empty list
+    sentence+=" " #adding a space at the last of inputed string
+    word = '' #empty string
+    for i in sentence: #looping over each word in string
+        if(i==' '): #if we have arrived at the empty space append the word as one item in list
+            list.append(word)
+            word = ''
+        else:    #else add the letter to the world
+            word = word+i
+    return list #return the list
+
+def wordReversal(sentence):
+    temp = mySplitfunction(sentence) #spltting the string in list of words
+    temp1 = [] #empty list
+    for x in temp:
+        temp1.append(x[::-1]) #reversing each word
+        string = "  "#empty string
+    print(string.join(temp1))#converting the list into string
+
+def sentenceReversal(sentence):
+    list = []  #empty list
+    sentence+=' '  #adding a space at the last of inputed string
+    word = '' #empty string
+    for i in sentence:
+        if(i !=' '): #if we haven't arrived at the empty space just add the letter in word
+            word+=i
+        else: 
+            list.append(word) #else just add the word to the list
+            word=''
+    print(list) 
+    list = list[::-1] #reverse the list
+    list = " ".join(list) #convert againg into a string
+    print(list)
+    return list
+
+speech = 'hi my name is prasad'
+
+sentenceReversal(speech)
+#wordReversal(speech)

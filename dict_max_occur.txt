@@ -1,0 +1,16 @@
+arr= [23,12,0,1,23,435,11,11,11,11,11,11,11,11,11,11,11,11,0,0,0,0,0] #list the item with maximum occurence
+
+def occurance(arr):
+    myDict = {} #create an empty dict
+    for i in arr: #add elements to dict
+        if (i in myDict.keys()):
+            myDict[i]+=1
+        else:
+            myDict[i]=1
+    tupleOfDict = myDict.items() #create tuple from dict so you can sort it
+    tupleOfDict = sorted(tupleOfDict,key=lambda tupleOfDict:tupleOfDict[1]) #sort it using the values
+    myDict = dict(tupleOfDict) #convert back the tuple to dict
+    x = list((myDict.keys()))
+    print(x[-1])
+
+occurance(arr)
