@@ -1,0 +1,35 @@
+s= 'geeksforpgeeekszzp'
+t = 'Geeks for Geeks'
+u = ' Python is great and Java is java also great Python cando'
+fmyDict = {}
+x = set()
+
+'''
+for i in s:
+    if i in fmyDict and fmyDict[i] == 1:
+        x.add(i)
+    else:
+            fmyDict[i] =+ 1
+print(x)
+
+del fmyDict['z']
+
+print(fmyDict.keys())
+'''
+
+def removeDuplicateWords(sentence):
+    word = ''
+    sentence +=" "
+    for i in sentence:
+        if i == " ":
+            fmyDict[word] =+ 1
+            word = ''
+        else:
+            word = word+i
+    word = ''
+    #print(fmyDict.keys())
+    for i in fmyDict:
+        word = word + i +" "
+    print (word)
+
+removeDuplicateWords(u)
