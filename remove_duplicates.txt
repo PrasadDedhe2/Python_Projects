@@ -1,0 +1,37 @@
+Input = 'Gfg, is best: for ! best best best best best best best best best Geeks ;'
+
+
+def RemovePunctuation(sentence):
+    x = ''
+    for i in sentence:
+        if i.isalpha()== True or i.isdigit() == True or i == ' ':
+            x = x + i
+    sentence = x
+    return sentence
+
+def RemoveDuplicateLetters(sentence):
+    x = set()
+    for i in sentence:
+        x.add(i)
+    sentence = ''.join(x)
+    return sentence
+
+print(RemoveDuplicateLetters(Input))
+
+def RemoveDuplicateWords(sentence):
+    sentence = RemovePunctuation(sentence)
+    x = sentence.split(' ')
+    y = set()
+    for i in x:
+        y.add(i)
+    return ' '.join(y)
+
+print(RemoveDuplicateWords(Input))
+
+
+
+'''x = Input.split(',')
+print(x)
+y = ','.join(x)
+print(y)
+'''
