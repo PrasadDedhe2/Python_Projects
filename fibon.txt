@@ -1,0 +1,12 @@
+def fiboFind(N)
+    count = 1
+    currentNumber = 1
+    previousNumber = 0
+    while(count!=N)
+            print(currentNumber+previousNumber, end=' ')
+            x = previousNumber
+            previousNumber = currentNumber
+            currentNumber+=x
+            count+=1
+    #print(currentNumber)
+fiboFind(40)
