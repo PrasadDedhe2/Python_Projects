@@ -1,0 +1,21 @@
+def bits(N):
+    multiplesOfTwo = [1]
+    x = 1
+    while(2**x<10**9):
+            multiplesOfTwo.append((2**x))
+            x=x+1
+    multiplesOfTwo = multiplesOfTwo[::-1]
+    print(multiplesOfTwo)
+    for i in range(len(multiplesOfTwo)):
+        if(N>=multiplesOfTwo[i]):
+            N=N-multiplesOfTwo[i]
+            multiplesOfTwo[i] = -1
+    for i in range(len(multiplesOfTwo)):
+        if multiplesOfTwo[i] == -1:
+            multiplesOfTwo[i] = 1
+        else:
+            multiplesOfTwo[i] = 0
+    return multiplesOfTwo
+
+
+print(bits(65))
