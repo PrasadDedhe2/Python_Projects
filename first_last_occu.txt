@@ -1,0 +1,24 @@
+class Solution: 
+    def firstAndLast(self, arr, n, x): 
+        # Code here
+        mylist = []
+        for i in range(n):
+            #print(arr[i])
+            if len(mylist) == 0 and arr[i] == x:
+                mylist.append(i)
+                continue
+            if len(mylist) == 1 and arr[i] == x:
+                mylist.append(i)
+                continue
+            if len(mylist) == 2 and arr[i] == x:
+                mylist.pop()
+                mylist.append(i)
+                continue
+
+        if len(mylist) == 1:
+            mylist.append(mylist[0])
+        if len(mylist) == 0:
+            mylist.append(-1)
+        
+        return mylist
+        
