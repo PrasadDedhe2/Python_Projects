@@ -1,0 +1,15 @@
+import requests
+from ratelimit import RateLimitException
+
+IP = input('Please enter the IP of which geolocation information is required, else press N')
+if IP == 'N' or IP == 'n':
+    url = 'https://ipapi.co/json/'
+else:
+    url = f'https://ipapi.co/{IP}/json/'
+try:
+    response = requests.get(url)
+except (requests.exceptions.ConnectionError,requests.exceptions.HTTPError,requests.exceptions.ConnectTimeout,requests.exceptions.RequestsWarning, RateLimitException) as e:
+    print(e)
+
+myJson = requests.get(url)
+print('IP address:', myJson.json()['ip'] ,'Location:',myJson.json()['city'],',',myJson.json()['region'],',',myJson.json()['country_name'])
