@@ -1,0 +1,30 @@
+
+
+def removeDuplicates(word):
+    myset = []
+    wordOne = ''
+    for i in word:
+        if i in myset:
+            continue
+        else:
+            wordOne = wordOne + i
+            myset.append(i)
+    return wordOne
+
+
+def maxLength(S):
+    counter = 0
+    max = 0
+    for i in S:
+        if i == '1':
+            counter= counter + 1
+        if i == '0':
+            if counter > max:
+                max = counter
+            counter = 0
+    if counter > max:
+        max = counter
+    return max
+
+S = "1111101111011111111111111111111"
+print(maxLength(S))
