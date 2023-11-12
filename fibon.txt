@@ -1,3 +1,12 @@
+def nthFibonacci(n) -> int:
+    a = [0, 1]
+    for j in range(2, n + 1):
+        a.append((a[j - 1] + a[j - 2]) % 1000000007)
+    return a[n]
+
+
+
+
 def fiboFind(N)
     count = 1
     currentNumber = 1

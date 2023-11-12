@@ -1,0 +1,11 @@
+    def increment(self, arr, N):
+        # code here
+        x = ''
+        z = []
+        for i in arr:
+            x = x + str(i)
+        y = 1 + int(x)
+        y = str(y)
+        for i in y:
+            z.append(int(i))
+        return z
