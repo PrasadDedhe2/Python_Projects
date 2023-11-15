@@ -1,0 +1,18 @@
+def ntItem(L1, L2, N):
+    finalSet = set()
+    for i in L1:
+        for j in L2:
+            finalSet.add(i+j)
+    finalSet = sorted(finalSet)
+    if N > len(finalSet):
+        return -1
+    else:
+        return finalSet[N-1]
+
+A = {1,2, 3, 4}
+B = {1,2, 3, 4}
+N = 16
+
+
+
+print(ntItem(A,B,N))
