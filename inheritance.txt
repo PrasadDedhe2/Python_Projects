@@ -1,0 +1,36 @@
+class animal:
+    legs = 4
+    tail = 1
+    static_variable1 = 20
+    static_variable2 = 30
+    def __init__(self,voice):
+        print('my voice is '+ voice)
+
+    def basic(self):
+        print(self.legs," ",self.tail)
+
+    @staticmethod
+    def name(name):
+        print('my name is '+ name)
+
+class mamal:
+    def __init__(self):
+        print('I am mamal')
+
+class bird(animal,mamal):
+    def __init__(self):
+        print('I am a bird')
+    animal.__init__(self=animal, voice='krrr')
+    animal.basic(self=animal)
+    mamal.__init__(self=mamal)
+
+
+
+#dog = animal('bow-bow')
+#animal.name('Tommy')
+#animal.basic(dog)
+
+print(bird().static_variable1)
+#In Python, there is no concept of "access specifiers" like in some other programming
+# languages such as C++ or Java (e.g., public, private, protected)
+
